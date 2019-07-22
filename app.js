@@ -3,6 +3,7 @@ const app = document.getElementById('accordion-root');
 // create a container div
 const container = document.createElement('div');
 container.setAttribute('class', 'accordion-container');
+container.setAttribute('id', 'accordion-container');
 // append the container to the app/accordion-root
 app.appendChild(container);
 
@@ -57,6 +58,7 @@ request.onload = function () {
       container.appendChild(card);
     })
   } else {
+    document.getElementById('accordion-container').innerHTML = 'Sorry there has been an issue trying to fetch the data. Please try again later.'
     console.log('Error fetching data. Check URL or server status.')
   }
 }
