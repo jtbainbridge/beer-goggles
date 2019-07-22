@@ -143,9 +143,6 @@ function buildGrid(para) {
       const imgTag = document.createElement('img');
       imgTag.setAttribute('src', beer.image_url);
       imgSpan.appendChild(imgTag);
-          // Add tagline
-      const tagline = document.createElement('h4');
-      tagline.textContent = beer.tagline;
           // Add ABV
       const beerAbv = document.createElement('p');
       beerAbv.textContent = `ABV ${beer.abv}%`
@@ -158,26 +155,19 @@ function buildGrid(para) {
       // 3. Each card will contain:
       card.appendChild(imgSpan);
       card.appendChild(beerTitle);
-      // card.appendChild(tagline);
       card.appendChild(beerAbv);
       card.appendChild(ctaButton);
 
       // 4. Append the cards to the container element
       gridContainer.appendChild(card);
   })
+  console.log('Grid built with ' + data.length + ' beers.')
 };
-
-// Build the initial grid
-function firstGrid() {
-  initSort(data)
-  buildGrid(sorted);
-  console.log('First grid built with ' + data.length + ' beers.')
-}
 
 function refreshGrid() {
   document.getElementById('container').innerHTML = '';
   buildGrid(sorted);
-  console.log('GRID REFRESHED');
+  console.log('Grid refreshed');
 }
 
 // initial sort by name A-Z
@@ -189,13 +179,60 @@ function initSort(para) {
           return -1;
       }
   })
-  console.log(sorted)
+}
+
+// Sort name by A-Z
+function nameAZ(para) {
+  sorted = para.sort((a, b) => {
+      if (a.name > b.name) {
+          return 1;
+      } else {
+          return -1;
+      }
+  })
+  refreshGrid()
+}
+
+// Sort name by Z-A
+function nameZA(para) {
+  sorted = para.sort((a, b) => {
+      if (a.name < b.name) {
+          return 1;
+      } else {
+          return -1;
+      }
+  })
+  refreshGrid()
+}
+// Sort ABV by high-low
+function abvHigh(para) {
+  sorted = para.sort((a, b) => {
+      if (a.abv < b.abv) {
+          return 1;
+      } else {
+          return -1;
+      }
+  })
+  refreshGrid()
+}
+
+// Sort ABV by low-high
+function abvLow(para) {
+  sorted = para.sort((a, b) => {
+      if (a.abv > b.abv) {
+          return 1;
+      } else {
+          return -1;
+      }
+  })
+  refreshGrid()
 }
 
 // Sorting button states and actions
-const sorting = document.getElementById('sorting').getElementsByTagName('button');
+const sorting = document.getElementById('sorting').getElementsByTagName('button'); //Grab sort buttons
+const sortOptions = [nameAZ, nameZA, abvHigh, abvLow]; //create an array for sort functions
 for (let i = 0; i < sorting.length; i++) {
   sorting[i].addEventListener('click', function() {
-    console.log(sorting[i])
-  })
+    sortOptions[i](sorted);
+  });
 }
