@@ -267,3 +267,16 @@ reset.addEventListener('click', function () {
   buildGrid(sorted);
   console.log('reset button hit');
 })
+
+
+// SLIDER OPTIONS
+const slider1 = tns({
+  container: '.my-slider1',
+  items: 1,
+  slideBy: 'page',
+  mouseDrag: true,
+  swipeAngle: false,
+  speed: 400,
+  navPosition: 'bottom',
+  arrowKeys: true
+});

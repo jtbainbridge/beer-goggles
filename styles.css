@@ -252,6 +252,43 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 0 0 8px rgba(0, 0, 0, .25);
 }
 
+#carousel {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.tns-controls, .tns-nav {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tns-controls [aria-controls] {
+    font-size: 15px;
+    margin: 0 5px;
+    height: 2.5em;
+    border-radius: 20px;
+    padding: 8px;
+    background: #f3f3f3;
+    text-decoration: none;
+    font-size: 0.9em;
+    border: none;
+}
+
+.tns-nav > [aria-controls] {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: #ddd;
+    border: 0;
+}
+
+.tns-nav > .tns-nav-active {
+    background: #999;
+}
+
 @media (max-width: 768px){
     .grid-main .container {
         width: 100%;
