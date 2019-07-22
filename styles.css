@@ -16,19 +16,25 @@ header {
     color: #ffffff;
 }
 
+.accordion-main {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 #accordion-root {
     text-align: center;
 }
 
 #accordion-root img {
-    max-height: 180px;
+    max-height: 150px;
     margin-top: 20px;
 }
 
 .accordion-container {
     width: 90%;
     max-width: 800px;
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
 button.accordion {
@@ -69,4 +75,22 @@ button.accordion:hover, button.accordion.is-open {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-in-out;
+}
+
+.accordion-main .close-btn {
+    margin-top: 10px;
+}
+
+.accordion-main a {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #e9e8e8;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #444444;
+    cursor: pointer;
+}
+
+.accordion-main a:hover {
+    background-color: #e9e8e8;
 }

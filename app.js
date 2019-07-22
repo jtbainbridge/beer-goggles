@@ -62,6 +62,7 @@ request.onload = function () {
     console.log('Error fetching data. Check URL or server status.')
   }
   accordion();
+  closeAll();
 }
 request.send();
 
@@ -82,4 +83,17 @@ function accordion() {
       }
     });
   }
+}
+
+// CLOSE ACCORDION
+function closeAll() {
+  const closeBtn = document.getElementById('close-btn');
+  const accs = document.querySelectorAll('.accordion');
+  closeBtn.addEventListener('click', function (event) {
+      for (let i = 0; i < accs.length; i++) {
+          accs[i].classList.remove('is-open');
+          const content = accs[i].nextElementSibling;
+          content.style.maxHeight = null;
+      }
+  });
 }
