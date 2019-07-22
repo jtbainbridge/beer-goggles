@@ -280,3 +280,27 @@ const slider1 = tns({
   navPosition: 'bottom',
   arrowKeys: true
 });
+
+const slider2 = tns({
+  container: '.my-slider2',
+  items: 3,
+  slideBy: 'page',
+  edgePadding: 10,
+  controls: false,
+  mouseDrag: true,
+  swipeAngle: false,
+  speed: 400,
+  navPosition: 'bottom',
+  responsive: {
+      "350": {
+          items: 2,
+          controls: false
+      },
+      "500": {
+          items: 3
+      },
+      "1024": {
+          items: 4
+      }
+  }
+});
