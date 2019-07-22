@@ -20,7 +20,7 @@ request.onload = function () {
       card.setAttribute('class', 'accItem');
 
       // 2. Create a button for the beer title
-      const accBtn = document.createElement('h1');
+      const accBtn = document.createElement('button');
       accBtn.setAttribute('class', 'accordion');
       accBtn.textContent = beer.name;
 
