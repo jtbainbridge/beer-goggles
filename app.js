@@ -8,7 +8,7 @@ app.appendChild(container);
 
 // API Request
 const request = new XMLHttpRequest();
-request.open('GET', 'https://api.punkapi.com/v2/beers/random', true);
+request.open('GET', 'https://api.punkapi.com/v2/beers/', true);
 request.onload = function () {
   // Store api object in a variable 'data'
   const data = JSON.parse(this.response);
