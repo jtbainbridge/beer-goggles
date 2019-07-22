@@ -1,4 +1,5 @@
 let data = []; //Store raw API data here
+let sorted = [];
 
 // Get the div, accordion-root for dynamic content
 const app = document.getElementById('accordion-root');
@@ -18,7 +19,7 @@ request.onload = function () {
   // Check status of request
   if (request.status >= 200 && request.status < 400) {
     // call initial setup function
-    setup(data)
+    setupApp(data)
   } else {
     document.getElementById('accordion-container').innerHTML = 'Sorry there has been an issue trying to fetch the data. Please try again later.'
     console.log('Error fetching data. Check URL or server status.')
@@ -27,9 +28,10 @@ request.onload = function () {
 request.send();
 
 // Initial setup
-function setup(para) {
-  buildAccordion(para); //Build Accordion
-  buildGrid(para); //Build Grid
+function setupApp(para) {
+  initSort(para); //Sort data from API
+  buildAccordion(sorted); //Build Accordion
+  buildGrid(sorted); //Build Grid
 }
 
 // Build Accordion
@@ -145,7 +147,7 @@ function buildGrid(para) {
       beerAbv.textContent = `ABV ${beer.abv}%`
           // Add CTA button
       const ctaButton = document.createElement('a');
-      ctaButton.setAttribute('href', '/');
+      ctaButton.setAttribute('href', '');
       ctaButton.setAttribute('class', 'ctaButton')
       ctaButton.textContent = 'Add to cart';
 
@@ -160,3 +162,28 @@ function buildGrid(para) {
       gridContainer.appendChild(card);
   })
 };
+
+// Build the initial grid
+function firstGrid() {
+  initSort(data)
+  buildGrid(sorted);
+  console.log('First grid built with ' + data.length + ' beers.')
+}
+
+function refreshGrid() {
+  document.getElementById('container').innerHTML = '';
+  buildGrid(sorted);
+  console.log('GRID REFRESHED');
+}
+
+// initial sort by name A-Z
+function initSort(para) {
+  sorted = para.sort((a, b) => {
+      if (a.name > b.name) {
+          return 1;
+      } else {
+          return -1;
+      }
+  })
+  console.log(sorted)
+}
