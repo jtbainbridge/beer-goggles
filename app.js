@@ -1,9 +1,11 @@
 let data = []; //Store raw API data here
 let sorted = []; //Store sorted API data
-const sortHigh = document.getElementById('sortHigh');
-const sortLow = document.getElementById('sortLow');
-const sortAZ = document.getElementById('sortAZ');
-const sortZA = document.getElementById('sortZA');
+const sortHigh = document.getElementById('sortHigh'); //get sort by abv high button
+const sortLow = document.getElementById('sortLow'); //get sort by abv low button
+const sortAZ = document.getElementById('sortAZ'); //get sort by name a-z button
+const sortZA = document.getElementById('sortZA'); //get sort by name z-a button
+let min; //store min value from filter input
+let max;//store max value from filter input
 
 // Get the div, accordion-root for dynamic content
 const app = document.getElementById('accordion-root');
@@ -86,7 +88,7 @@ function buildAccordion(para) {
   closeAll();
 }
 
-// ACCORDION ACTIONS
+// Accordtion actions
 function accordion() {
   const accordions = document.getElementsByClassName('accordion');
   for (let i = 0; i < accordions.length; i++) {
@@ -105,7 +107,7 @@ function accordion() {
   }
 }
 
-// CLOSE ACCORDION
+// Close Accordion
 function closeAll() {
   const closeBtn = document.getElementById('close-btn');
   const accs = document.querySelectorAll('.accordion');
@@ -236,3 +238,13 @@ for (let i = 0; i < sorting.length; i++) {
     sortOptions[i](sorted);
   });
 }
+
+// Event listener for filter button
+filter.addEventListener('click', function () {
+  console.log(sorted.length + ' filtered');
+});
+
+// Event listener for reset
+reset.addEventListener('click', function () {
+  console.log('reset button hit')
+})

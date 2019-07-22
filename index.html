@@ -23,11 +23,22 @@
             <div class="close-btn"><a id="close-btn">Collapse all</a></div>
             <div id="accordion-root"></div>
         </section>
-        
+
         <!-- CTA Grid of Beers -->
         <section class="grid-main">
             <h1>Grid of Beers</h1>
             <div class="options">
+                <div class="filter">
+                    <h4>Filter by ABV:</h4>
+                    <div class="input-group">
+                        <p>min</p>
+                        <input type="number" id="min" name="min" min="4">
+                        <p>max</p>
+                        <input type="number" id="max" name="max" max="60">
+                        <button id="filter">Filter</button>
+                        <button id="reset">Reset</button>
+                    </div>
+                </div>
                 <div class="sort">
                     <h4>Sort by:</h4>
                     <div id="sorting" class="sorting">
