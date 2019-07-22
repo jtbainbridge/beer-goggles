@@ -236,6 +236,9 @@ const sortOptions = [nameAZ, nameZA, abvHigh, abvLow]; // create an array for so
 for (let i = 0; i < sorting.length; i++) {
   sorting[i].addEventListener('click', function() {
     sortOptions[i](sorted);
+    let current = document.getElementsByClassName('activeSrt');
+    current[0].className = current[0].className.replace('activeSrt', '');
+    this.className += 'activeSrt';
   });
 }
 
@@ -262,5 +265,5 @@ reset.addEventListener('click', function () {
   document.getElementById('max').value = '';
   initSort(data);
   buildGrid(sorted);
-  console.log('reset button hit')
+  console.log('reset button hit');
 })
