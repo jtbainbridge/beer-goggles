@@ -103,7 +103,46 @@ button.accordion:hover, button.accordion.is-open {
     justify-content: center;
 }
 
+.grid-main .card {
+    text-align: center;
+    width: 280px;
+    height: 380px;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .25);
+}
+
 .grid-main .card img {
     margin-top: 20px;
     max-height: 180px;
+}
+
+.grid-main .card img {
+    margin-top: 20px;
+    max-height: 180px;
+}
+
+.grid-main .card h1 {
+    margin: 20px 0;
+}
+
+.grid-main .card h3 {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.grid-main .card h4 {
+    margin-top: 5px;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+.grid-main .card p {
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #c53d33
 }
