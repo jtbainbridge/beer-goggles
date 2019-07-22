@@ -231,8 +231,8 @@ function abvLow(para) {
 }
 
 // Sorting button states and actions
-const sorting = document.getElementById('sorting').getElementsByTagName('button'); //Grab sort buttons
-const sortOptions = [nameAZ, nameZA, abvHigh, abvLow]; //create an array for sort functions
+const sorting = document.getElementById('sorting').getElementsByTagName('button'); // Grab sort buttons
+const sortOptions = [nameAZ, nameZA, abvHigh, abvLow]; // create an array for sort functions
 for (let i = 0; i < sorting.length; i++) {
   sorting[i].addEventListener('click', function() {
     sortOptions[i](sorted);
@@ -248,6 +248,8 @@ function filterResults(para) {
 filter.addEventListener('click', function () {
   min = document.getElementById('min').value;
   max = document.getElementById('max').value;
+  if (min === '') {min = 0}; // logic added incase the field is left blank
+  if (max === '') {max = 100}; // logic added incase the field is left blank
   filterResults(data);
   refreshGrid();
   console.log(sorted.length + ' filtered');
@@ -255,5 +257,10 @@ filter.addEventListener('click', function () {
 
 // Event listener for reset
 reset.addEventListener('click', function () {
+  document.getElementById('container').innerHTML = '';
+  document.getElementById('min').value = '';
+  document.getElementById('max').value = '';
+  initSort(data);
+  buildGrid(sorted);
   console.log('reset button hit')
 })
