@@ -239,8 +239,17 @@ for (let i = 0; i < sorting.length; i++) {
   });
 }
 
+// Filter results and sort by largest first
+function filterResults(para) {
+  sorted = para.filter(beer => beer.abv >= min && beer.abv <= max);
+};
+
 // Event listener for filter button
 filter.addEventListener('click', function () {
+  min = document.getElementById('min').value;
+  max = document.getElementById('max').value;
+  filterResults(data);
+  refreshGrid();
   console.log(sorted.length + ' filtered');
 });
 
