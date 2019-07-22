@@ -61,5 +61,25 @@ request.onload = function () {
     document.getElementById('accordion-container').innerHTML = 'Sorry there has been an issue trying to fetch the data. Please try again later.'
     console.log('Error fetching data. Check URL or server status.')
   }
+  accordion();
 }
 request.send();
+
+// ACCORDION ACTIONS
+function accordion() {
+  const accordions = document.getElementsByClassName('accordion');
+  for (let i = 0; i < accordions.length; i++) {
+    accordions[i].addEventListener('click', function () {
+      this.classList.toggle('is-open');
+      const content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        // accordion is open, close it
+        content.style.maxHeight = null;
+      }
+      else {
+        // accordion is closed, open it
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  }
+}
