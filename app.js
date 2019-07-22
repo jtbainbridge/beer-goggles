@@ -1,5 +1,9 @@
 let data = []; //Store raw API data here
-let sorted = [];
+let sorted = []; //Store sorted API data
+const sortHigh = document.getElementById('sortHigh');
+const sortLow = document.getElementById('sortLow');
+const sortAZ = document.getElementById('sortAZ');
+const sortZA = document.getElementById('sortZA');
 
 // Get the div, accordion-root for dynamic content
 const app = document.getElementById('accordion-root');
@@ -186,4 +190,12 @@ function initSort(para) {
       }
   })
   console.log(sorted)
+}
+
+// Sorting button states and actions
+const sorting = document.getElementById('sorting').getElementsByTagName('button');
+for (let i = 0; i < sorting.length; i++) {
+  sorting[i].addEventListener('click', function() {
+    console.log(sorting[i])
+  })
 }
