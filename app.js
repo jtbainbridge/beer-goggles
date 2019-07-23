@@ -1,5 +1,5 @@
 import { buildAccordion } from './modules/accordion.js';
-import { buildGrid } from './modules/grid.js';
+import { buildGrid, refreshGrid } from './modules/grid.js';
 
 let data = []; //Store raw API data here
 let sorted = []; //Store sorted API data
@@ -34,17 +34,6 @@ function setupApp(para) {
   buildGrid(sorted); //Build Grid
 }
 
-
-
-
-
-
-function refreshGrid() {
-  document.getElementById('container').innerHTML = '';
-  buildGrid(sorted);
-  console.log('Grid refreshed');
-}
-
 // initial sort by name A-Z
 function initSort(para) {
   sorted = para.sort((a, b) => {
@@ -65,7 +54,7 @@ function nameAZ(para) {
           return -1;
       }
   })
-  refreshGrid()
+  refreshGrid(sorted)
 }
 
 // Sort name by Z-A
@@ -77,7 +66,7 @@ function nameZA(para) {
           return -1;
       }
   })
-  refreshGrid()
+  refreshGrid(sorted)
 }
 // Sort ABV by high-low
 function abvHigh(para) {
@@ -88,7 +77,7 @@ function abvHigh(para) {
           return -1;
       }
   })
-  refreshGrid()
+  refreshGrid(sorted)
 }
 
 // Sort ABV by low-high
@@ -100,7 +89,7 @@ function abvLow(para) {
           return -1;
       }
   })
-  refreshGrid()
+  refreshGrid(sorted)
 }
 
 // Sorting button states and actions

@@ -42,4 +42,11 @@ function buildGrid(para) {
   console.log('Grid built')
 };
 
-export { buildGrid };
+function refreshGrid(para) {
+  document.getElementById('container').innerHTML = '';
+  buildGrid(para);
+  console.log('Grid refreshed');
+}
+
+
+export { buildGrid, refreshGrid };
