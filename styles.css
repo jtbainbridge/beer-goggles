@@ -21,6 +21,10 @@ header {
     color: #ffffff;
 }
 
+main>section {
+    border-bottom: 1px solid rgba(204, 217, 209, 0.2);
+}
+
 .accordion-main {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -202,6 +206,11 @@ button.accordion:hover, button.accordion.is-open {
     text-decoration: none;
     font-size: 0.9em;
     border: none;
+}
+
+.options button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .25);
 }
 
 .input-group {
