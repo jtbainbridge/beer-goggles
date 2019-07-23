@@ -1,3 +1,5 @@
+import { tns } from '../node_modules/tiny-slider/src/tiny-slider.js';
+
 // SLIDER OPTIONS
 const slider1 = tns({
   container: '.my-slider1',
