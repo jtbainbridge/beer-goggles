@@ -117,7 +117,7 @@ filter.addEventListener('click', function () {
   if (min === '') {min = 0}; // logic added incase the field is left blank
   if (max === '') {max = 100}; // logic added incase the field is left blank
   filterResults(data);
-  refreshGrid();
+  refreshGrid(sorted);
   console.log(sorted.length + ' filtered');
 });
 
