@@ -46,6 +46,11 @@ main>section {
     margin: 20px auto;
 }
 
+.accordion-container p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 button.accordion {
     width: 100%;
     background-color: whitesmoke;
@@ -91,17 +96,18 @@ button.accordion:hover, button.accordion.is-open {
 }
 
 .accordion-main a {
-    width: 100px;
-    padding: 5px;
-    border: 1px solid #e9e8e8;
+    width: 120px;
     border-radius: 20px;
-    font-size: 14px;
-    color: #444444;
-    cursor: pointer;
+    padding: 8px;
+    background-color: #f3f3f3;
+    text-decoration: none;
+    font-size: 0.9em;
+    border: none;
 }
 
 .accordion-main a:hover {
-    background-color: #e9e8e8;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .25);
 }
 
 .grid-main {
