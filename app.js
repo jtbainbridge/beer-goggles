@@ -4,10 +4,6 @@ import { slider1, slider2 } from './modules/carousel.js';
 
 let data = []; //Store raw API data here
 let sorted = []; //Store sorted API data
-const sortHigh = document.getElementById('sortHigh'); //get sort by abv high button
-const sortLow = document.getElementById('sortLow'); //get sort by abv low button
-const sortAZ = document.getElementById('sortAZ'); //get sort by name a-z button
-const sortZA = document.getElementById('sortZA'); //get sort by name z-a button
 let min; //store min value from filter input
 let max;//store max value from filter input
 
